@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 import { ethers } from 'ethers'
 
+
 // Components
 import Navigation from './components/Navigation'
 import Search from './components/Search'
 import Domain from './components/Domain'
+import Footer from './components/Footer'
 
 // ABIs
 import ETHDaddy from './abis/ETHDaddy.json'
@@ -57,19 +59,36 @@ function App() {
       <div className='cards__section'>
         <h2 className='cards__title'>Why you need a domain name.</h2>
         <p className='cards__description'>
-          Own your custom username, use it across services, and
-          be able to store an avatar and other profile data.
+          
+            Own your custom username, use it across services, and be able to store an avatar and other profile data.
+            This allows users to type in the name of the website instead of having to input the literal numeric IP address.
+            Block Domain attempts to give people (as well as applications) an easier way to read and share cryptocurrency addresses.
+          
         </p>
+
+        <br></br>
 
         <hr />
 
+        <br></br>
+        <br></br>
+        
+
         <div className='cards'>
+        <h2 className='cards__title'>Domain Names</h2>
           {domains.map((domain, index) => (
             <Domain domain={domain} ethDaddy={ethDaddy} provider={provider} id={index + 1} key={index} />
           ))}
         </div>
+
+        <hr/>
+      </div>
+
+      <div>
+      <Footer />
       </div>
     </div>
+    
   );
 }
 
